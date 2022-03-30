@@ -1,1 +1,97 @@
-/sibcb2/bioinformatics2/chenyulong/index.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chen's Bioinformatics HomePage</title>
+<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width;initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    *{margin: 0;padding: 0;}
+    body{text-align:center;}
+
+    #mainpage {
+        max-width: 1200px; margin: 0 auto;
+    }
+
+    #title {
+        margin: 50px 0px 10px auto;
+    }
+
+    #container {
+        margin: 30px 200px;
+        float: left;
+    }
+
+    .card {
+        width: 300px;
+        height: 200px;
+        margin: 10px 50px;
+        padding: 0;
+        background-color: #0174DF;
+        border-radius: 10px;
+        float: left;
+        display: table;
+    }
+
+    .card-content {
+        margin: 0;
+        padding-bottom: 30px;
+        vertical-align: middle;
+        display:table-cell; 
+        color: #fff;
+    }
+
+    .card:before {
+        content: '';
+        height: 0;
+        width: 300px;
+        position: absolute;
+        z-index: -1;
+        border-radius: 10px;
+        background-color: #ffeb3b;
+        transition: height 0.3s ease;
+    }
+
+    .card:hover, .card-content:hover{
+        z-index: 1;
+        background: transparent;
+        color: #000;
+        cursor: pointer;
+    }
+
+    .card:hover:before {
+        height: 200px;
+    }
+</style>
+</head>
+<body>
+<div id="mainpage">
+    <div id="title">
+        <h2 >Chen's Bioinformatics HomePage</h2>
+        <hr style="border:2px solid #795548; width:50%; margin-left:25%;margin: 20px auto;" />
+    </div>     
+
+    <div id="container">
+        <div class="card" onclick="window.location='project'">
+            <div class="card-content">
+                <font style="font-size: 30px;">Projects</font>    
+                <p>A directory for all project files</p>
+            </div>    
+        </div>
+
+        <div class="card" onclick="window.location='docker/ghost_system_other/home'">
+            <div class="card-content">
+                <font style="font-size: 30px;">Docker</font>
+                <p>A directory for docker-related content</p>
+            </div>    
+        </div>
+
+        <img width="50%" style="margin:3em auto;border-radius:5px" src="webpage/mdnice-build/img/dance.gif">
+
+        <div class="foot">
+            <i class="fa fa-globe w3-large " id="browselogo"></i> <a class="w3-button " href="testdir" target="_blank" id="tag">More resources</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
