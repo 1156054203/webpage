@@ -17,6 +17,10 @@ function usage {
     exit 0
 }
 
+if [ $# -ne 1 ];then
+   usage
+fi
+
 ARG=$(getopt -q -o hrsi: --long help,run,stop,idxdir: -n $0 -- $@)
 
 eval set -- $ARG
@@ -36,7 +40,7 @@ esac
 done
 
 if [ $idxdir != 'last_directory' ];then
-   sed -i "s#docBase=\(\".*\"\) #docBase=\"$2\" #g" $tomcatdir/conf/server.xml
+   sed -i "s#docBase=\(\".*\"\) #docBase=\"$idxdir\" #g" $tomcatdir/conf/server.xml
 fi
 
 if [[ $run == 'true' ]];then
