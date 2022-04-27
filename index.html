@@ -18,50 +18,67 @@
     }
 
     #container {
-        margin: 30px 200px;
+        margin: 30px 190px;
         float: left;
     }
 
     .card {
-        width: 300px;
         height: 200px;
-        margin: 10px 50px;
+        width: 300px;
         padding: 0;
+        margin: 10px 50px;
         background-color: #0174DF;
         border-radius: 10px;
         float: left;
         display: table;
+        box-shadow: 2px 2px 1px black;
+        border: solid 1px black;
     }
 
     .card-content {
         margin: 0;
+        border-radius: 10px;
+        position: relative;   /* be for underline*/
         padding-bottom: 30px;
         vertical-align: middle;
         display:table-cell; 
         color: #fff;
+        transition-duration: 0.8s;
+        transition-timing-function: ease-out;
+        transition-property: background-color, color;
     }
 
-    .card:before {
-        content: '';
-        height: 0;
-        width: 300px;
-        position: absolute;
-        z-index: -1;
-        border-radius: 10px;
+    .card-content:hover {
         background-color: #ffeb3b;
-        transition: height 0.3s ease;
-    }
-
-    .card:hover, .card-content:hover{
-        z-index: 1;
-        background: transparent;
-        color: #000;
         cursor: pointer;
+        border-radius: 10px;
+        color: black;
+        transition-duration: 0.8s;
+        transition-timing-function: ease-out;
+        transition-property: background-color,color;
+    }
+ 
+    .card-content:after {
+        content: "";
+        height: 2px;
+        overflow: hidden;
+        display: block;
+        left:40px;
+        bottom: 80px;
+        position: absolute;
+        width: 220px;
+        background: black;
+        transform: scaleX(0);
+        transition:all 0.5s;
     }
 
-    .card:hover:before {
-        height: 200px;
+    .card-content:hover:after {
+        transform: scaleX(1);
     }
+
+   .foot a:hover {
+        color: #0174DF;
+   }
 </style>
 </head>
 <body>
@@ -74,15 +91,15 @@
     <div id="container">
         <div class="card" onclick="window.location='project'">
             <div class="card-content">
-                <font style="font-size: 30px;">Projects</font>    
-                <p>A directory for all project files</p>
+                <font style="font-size: 30px;">Project</font><br>
+                <font>A directory for project files</font>
             </div>    
         </div>
 
         <div class="card" onclick="window.location='docker/ghost_system_other/home'">
             <div class="card-content">
-                <font style="font-size: 30px;">Docker</font>
-                <p>A directory for docker-related content</p>
+                <font style="font-size: 30px;">Docker</font><br>
+                <font>A directory for docker running</font>
             </div>    
         </div>
 
