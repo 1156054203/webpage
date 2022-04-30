@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>login</title>
+<meta http-equiv=Content-Type content="text/html,charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style>
+    * {margin: 0;padding: 0;}
+    body {text-align:center;
+        background-color: #34495e;
+    }
+    #login {
+        margin: 50px auto;
+        background-color: grey;
+        /* opacity: 0.9; */
+        width: 300px;
+        height: 500px;
+        text-align: left;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 10px 0;
+        padding: 35px 0 15px 0;
+    }
+
+    label {
+        margin: 0 5px
+    }
+
+    input {
+        margin: 2px 20px;
+        width: 260px;
+        height: 35px;
+        outline: none;
+        padding: 0 5px;
+    }
+
+    .login {
+        margin: 30px 120px;
+        text-align: center;
+        width: 60px;
+        height: 35px;
+        cursor: pointer;
+    }
+
+    .help {
+        margin: 30px 43px;
+        width: 60px;
+        height: 35px;
+        cursor: pointer;
+    }
+
+    button:hover {
+       background-color: #d1d1d1;
+    }
+</style>
+<script>
+    window.onload = function(){
+    var email = document.querySelector('#email');
+    var pword = document.querySelector('#pword');
+    var login = document.querySelector('.login');
+    var forgot = document.querySelector('#forgot');
+    var regist = document.querySelector('#regist');
+
+    login.addEventListener('click',function(){
+        console.log(email.value);
+        console.log(pword.value);
+    });
+
+    var check = document.querySelector('#check');
+    var flag = check.checked;
+    if(flag){
+       console.log('已选择');
+    }else{
+       console.log('未选择');
+    };
+
+}
+</script>
+</head>
+<body>
+<div id="login" >
+    <h2>Existing User</h2> 
+    <label>* Email</label><br>
+    <input type="text" autocomplete="off" placeholder="Enter the registered email" id="email"><br>
+    <label>* Password</label><br>
+    <input type="password" autocomplete="off" placeholder="Enter the password" id="pword">
+    <input type="checkbox" id="check" style="width:18px;margin: 5px 10px 5px 23px;vertical-align:middle;"><span style="font-size:13px;vertical-align:middle;">Remember me for 7 days</span>
+    <button type="button" class="login"><span>Login</span></button>
+    <button type="button" class="help" id="forgot"><span>Forgot</span></button>
+    <button type="button" class="help" id="regist"><span>Regist</span></button>
+</div>
+</body>
+</html>
